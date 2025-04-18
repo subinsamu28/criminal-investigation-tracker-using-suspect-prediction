@@ -18,19 +18,4 @@ A powerful and intuitive system designed to assist law enforcement, legal profes
 - **Database**: MongoDB / PostgreSQL
 - **Authentication**: JWT / OAuth
 
-## 📸 Screenshots
-> *(Add UI screenshots or flow diagrams here)*
 
-## 🛠️ Installation
-
-```bash
-# Clone the repo
-git clone https://github.com/your-username/criminal-investigation-tracker.git
-cd criminal-investigation-tracker
-
-# Install dependencies
-npm install  # or pip install -r requirements.txt
-
-# Run the application
-npm start  # or python app.py
-# criminal-investigation-tracker-using-suspect-prediction
