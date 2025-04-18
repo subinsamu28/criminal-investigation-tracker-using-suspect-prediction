@@ -1,0 +1,61 @@
+{% load static %}
+{% block static %}
+
+{% include 'department/header.html' %}
+      <!-- partial -->
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">FIR REGISTRATION</h4>
+                  
+                  <form class="forms-sample" method="POST" action="addfir" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Case name</label>
+                      <input type="text" class="form-control" id="exampleInputUsername1" name="case_no" placeholder="case name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputUsername1">Description</label>
+                        <input type="text" class="form-control" id="exampleInputUsername1" name="description" placeholder="case description">
+                      </div>
+                    
+
+                      <div class="form-group">
+                        <label for="exampleInputUsername1">Image</label>
+                        <input type="file" class="form-control" id="exampleInputUsername1" name="image" placeholder="name">
+                      </div>
+                  
+				    <div class="form-group">
+                        <label for="exampleInputUsername1">Image1</label>
+                        <input type="file" class="form-control" id="exampleInputUsername1" name="image1" placeholder="name">
+                      </div>
+                  
+                 <div class="form-group">
+                        <label for="exampleInputUsername1">Victim Details</label>
+                        <input type="text" class="form-control" id="exampleInputUsername1" name="victim_details" placeholder="name & details">
+                      </div>
+					   <div class="form-group">
+                        <label for="exampleInputUsername1">Date</label>
+                        <input type="date" class="form-control" id="exampleInputUsername1" name="date" placeholder="name">
+                      </div>
+
+                 
+                    
+                    <center>
+                    <button type="submit" class="btn btn-primary mr-2" name="submit" value="submit">ADD</button>
+                </center>
+                  </form>
+                </div>
+              </div>
+            </div>
+           
+           
+    
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+       
+
+        {% endblock %}

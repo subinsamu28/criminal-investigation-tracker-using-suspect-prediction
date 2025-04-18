@@ -1,0 +1,60 @@
+{% load static %}
+{% block static %}
+
+{% include 'admin/header.html' %}
+      <!-- partial -->
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">DEPARTMENTS</h4>
+                 
+                  <form class="forms-sample" method="POST" action="addpricipal" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Department names </th>
+
+                                    <th scope="col">Email</th>
+                                   
+								   
+                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in res %}
+                                <tr>
+                                    <td>{{i.id}}</td>
+                                    <td>{{i.department_name}}</td>
+                                    
+                                   
+								   
+									<td>{{i.email}}</td>
+									
+									
+                                  
+                                    
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    
+                   
+                  </form>
+                </div>
+              </div>
+            </div>
+           
+           
+    
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        
+        {% endblock %}

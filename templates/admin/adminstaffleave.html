@@ -1,0 +1,69 @@
+{% load static %}
+{% block static %}
+
+{% include 'admin/header.html' %}
+      <!-- partial -->
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Staff Leave</h4>
+                  <p class="card-description">
+                 
+                  </p>
+               
+                    <div class="form-group">
+               <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">Name </th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Reason</th>
+                                    <th scope="col">No of Days </th>
+                                    <th scope="col">Startdate</th>
+                                    <th scope="col">Enddate </th>
+                                    <th scope="col">date </th>
+                                    <th scope="col">Status </th>
+                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in result %}
+                                <tr>
+                                    <td>{{i.id}}</td>
+                                    <td>{{i.staff_id__name}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.reason}}</td>
+                                    <td>{{i.noofdays}}</td>
+                                    <td>{{i.startdate}}</td>
+                                    <td>{{i.enddate}}</td>
+                                    <td>{{i.date}}</td>
+                                   
+                                 
+                                 <td>{{i.status}}</td>
+                                   
+                                                             
+                      
+                                              </tr>
+                      {% endfor %}
+                                            </tbody>
+                                          </table>
+                    </div>
+
+                    
+                   
+                
+                </div>
+              </div>
+            </div>
+           
+           
+    
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        {% include 'admin/footer.html' %}
+
+        {% endblock %}

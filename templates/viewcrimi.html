@@ -1,0 +1,52 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+
+       
+<!--
+
+TemplateMo 581 Kind Heart Charity
+
+https://templatemo.com/tm-581-kind-heart-charity
+
+-->
+
+       <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12">
+                            <h2 class="text-white mb-4">Complaint Form</h2>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">id</th>
+                                        <th scope="col">Name </th>
+    
+                                        <th scope="col">description</th>
+                                        <th scope="col">Image</th>
+                                       
+                                       
+                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for i in res %}
+                                    <tr>
+                                        <td>{{i.id}}</td>
+                                        <td>{{i.name}}</td>
+                                        
+                                       
+                                       
+                                        <td>{{i.description}}</td>
+                                        <td> <img src="media/{{i.image}} " style="width:50px; height:auto;"alt=""> </td>
+                                        
+                                      
+                                        
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+   
+		{% endblock %}

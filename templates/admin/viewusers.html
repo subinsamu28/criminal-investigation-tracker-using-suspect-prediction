@@ -1,0 +1,58 @@
+{% load static %}
+{% block static %}
+
+{% include 'admin/header.html' %}
+      <!-- partial -->
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">REGISTERED USERS</h4>
+                  
+                  <form class="forms-sample" method="POST" action="addpricipal" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">Name </th>
+                                    <th scope="col">Address </th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone </th>
+                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in res %}
+                                <tr>
+                                    <td>{{i.id}}</td>
+                                    <td>{{i.name}}</td>
+                                    
+                                    <td>{{i.address}}</td>
+									<td>{{i.email}}</td>
+									<td>{{i.phone}}</td>
+                                  
+                                    
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    
+                   
+                  </form>
+                </div>
+              </div>
+            </div>
+           
+           
+    
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        
+
+        {% endblock %}

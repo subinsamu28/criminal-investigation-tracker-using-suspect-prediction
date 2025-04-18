@@ -1,0 +1,76 @@
+{% load static %}
+{% block static %}
+
+{% include 'department/header.html' %}
+      <!-- partial -->
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">COMPLAINTS</h4>
+                 
+                  <form class="forms-sample" method="POST" action="addpricipal" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Name </th>
+                                    <th scope="col">Address</th>
+
+                                    <th scope="col">Subject</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Status</th>
+                                   
+								   
+                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in res %}
+                                <tr>
+                                    <td>{{i.id}}</td>
+                                    <td>{{i.userid__name}}</td>
+                                    <td>{{i.userid__address}}</td>
+                                    
+                                   
+								   
+									<td>{{i.subject}}</td>
+                                    <td>{{i.description}}</td>
+                                  
+                                    
+									<td><img src="media/{{i.image}} " style="width:50px; height:auto;"alt=""><a href="media/{{i.image}}">view</a></td>
+									
+									
+                                    {% if i.status == 'pending'%}
+                                    <td><a href="{% url 'useraccept' id=i.id %}">Accept</a><br> <br> <a href="{% url 'userreject' id=i.id %}">Reject</a></td>
+                              
+                                           {% else %}
+                                 
+                                 <td>{{i.status}}</td>
+                                    {% endif %}
+                                    
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    
+                   
+                  </form>
+                </div>
+              </div>
+            </div>
+           
+           
+    
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        
+
+        {% endblock %}

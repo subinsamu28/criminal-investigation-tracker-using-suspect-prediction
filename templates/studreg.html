@@ -1,0 +1,94 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+
+       
+<div class="main-panel">        
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">STUDENT REGISTRATION PAGE</h5>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+       <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12">
+                            <h2 class="text-white mb-4">Registration Form</h2>
+
+                            <form class="custom-form volunteer-form mb-5 mb-lg-0" action="addstud" method="POST" role="form" enctype="multipart/form-data">
+							{% csrf_token %}
+                                <h3 class="mb-4"></h3>
+
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <input type="text" name="name" id="volunteer-name" class="form-control" placeholder="Name" required>
+                                    </div>
+									
+									
+									 <div class="col-lg-6 col-12">
+                                        <input type="text" name="fathername" id="volunteer-name" class="form-control" placeholder="Father's name" required>
+                                    </div>
+									
+									
+										 <div class="col-lg-6 col-12">
+                                        <input type="text" name="mothername" id="volunteer-name" class="form-control" placeholder="Monther's name" required>
+                                    </div>
+									
+										 <div class="col-lg-6 col-12">
+                                       <div class="form-floating">
+								
+                                    <select name="gender" class="form-control">
+                                        <option>--GENDER--</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Others">Others</option>
+
+
+                                    </select>
+							</div>
+               
+                                    </div>
+									
+										 <div class="col-lg-6 col-12">
+                                        <input type="text" name="age" id="volunteer-name" class="form-control" placeholder="Age" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-12">    
+                                        <input type="email" name="email" id="volunteer-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-12">
+                                        <input type="number" name="phone" id="volunteer-subject" class="form-control" placeholder="Phone number" required>
+                                    </div>
+									
+									
+									     <div class="col-lg-6 col-12">
+                                        <input type="file" name="id_proof" id="volunteer-subject" class="form-control" placeholder="Address" required>
+                                    </div>
+										<div class="col-lg-6 col-12">
+                                        <input type="password" name="password" id="volunteer-subject" class="form-control" placeholder="Password" required>
+                                    </div>
+
+
+	`			
+
+                                </div>
+
+                               
+
+                                <button type="submit" name="submit" class="form-control">Submit</button>
+                            </form>
+                        </div>
+
+   
+		{% endblock %}

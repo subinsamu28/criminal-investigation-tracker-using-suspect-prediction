@@ -1,0 +1,64 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+
+       
+<!--
+
+TemplateMo 581 Kind Heart Charity
+
+https://templatemo.com/tm-581-kind-heart-charity
+
+-->
+<form action="viewstudfirfilter" method="POST">
+{% csrf_token %}
+<input type="text" name="name">
+<input type="text" name="date">
+<input type="submit" name="submit">
+
+
+</form>
+
+       <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12">
+                            <h2 class="text-white mb-4">Complaint Form</h2>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">id</th>
+                                        <th scope="col">Case name</th>
+    
+                                        <th scope="col">description</th>
+                                        <th scope="col">Date</th>
+                                       
+                                       
+                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for i in res %}
+                                    <tr>
+                                        <td>{{i.id}}</td>
+                                        <td>{{i.case_no}}</td>
+                                        
+                                       
+                                       
+                                        <td>{{i.description}}</td>
+                                        <td>{{i.date}}</td>
+                                        
+                                      
+                                        
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+						
+						<br>
+						<br>
+						<br>
+{% include 'footer.html' %}
+   
+		{% endblock %}

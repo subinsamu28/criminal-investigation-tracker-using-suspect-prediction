@@ -1,0 +1,75 @@
+{% load static %}
+{% block static %}
+
+{% include 'admin/header.html' %}
+      <!-- partial -->
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">FIR</h4>
+
+                  <form action="viewfirrfilter" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="name" placeholder="Enter Name">
+                    <input type="submit" name="submit">
+                  </form>
+                 
+                  <form class="forms-sample" method="POST" action="addpricipal" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                  
+                                    <th scope="col">Case Name </th>
+                                    
+                                    <th scope="col">Victim Details </th>
+
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Image1</th>
+                                   
+                                   
+                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in res %}
+                                <tr>
+                                  
+                                    <td>{{i.case_no}}</td>
+                                    <td>{{i.victim_details}}</td>
+                                    <td>{{i.description}}</td>
+                                    <td>{{i.date}}</td>
+                                    <td>  <img src="media/{{i.image}}" width="100px" height="auto" alt=""><br> <a href="media/{{i.image}}">view</a></td>
+                                    <td> <img src="media/{{i.image1}}" width="100px" height="auto" alt=""><br> <a href="media/{{i.image1}}">view</a></td>
+                                    
+                                   
+                                   
+                                    
+                                  
+                                    
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    
+                   
+                  </form>
+                </div>
+              </div>
+            </div>
+           
+           
+    
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        
+
+        {% endblock %}

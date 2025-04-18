@@ -1,0 +1,88 @@
+{% load static %}
+{% block static %}
+
+{% include 'department/header.html' %}
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="row">
+                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                  <h3 class="font-weight-bold"> face scanner </h3>
+                
+            </div>
+          </div>
+          {% if res == 'null' %}
+          <div class="row">
+       
+            <div class="col-md-6 grid-margin transparent">
+              <div class="row">
+                <div class="col-md-12 mb-6 stretch-card transparent">
+                  <div class="card card-tale">
+                    <div class="card-body">
+          <br>
+                        <h3 class="mb-2"style="color:red">NOT FOUND</h3>
+                     <br>
+                    </div>
+                  </div>
+                </div>
+            </div> 
+          </div>
+          {% else %}
+          <div class="row">
+       
+            <div class="col-md-6 grid-margin transparent">
+              <div class="row">
+                <div class="col-md-12 mb-6 stretch-card transparent">
+                  <div class="card card-tale">
+                    <div class="card-body">
+          <br>
+                        <h3 class="mb-2"style="color:green">{{res.name}}</h3>
+                       <h3 class="mb-2"style="color:green">{{res.department}}</h3>
+                        <h3 class="mb-2"style="color:green">{{res.image}}</h3>
+                      
+                     <br>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          {% endif %}
+         
+        
+      
+
+
+   
+    
+      
+                </div>
+              </div>
+             
+
+
+
+              
+            </div>
+          </div>
+		  
+		
+		  
+		  
+	
+             
+
+
+
+              
+            </div>
+          </div>
+         
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+     
+        {% include 'department/footer.html' %}
+
+        {% endblock %}

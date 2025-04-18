@@ -1,0 +1,130 @@
+{% load static %}
+{% block content %}
+
+
+
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>criminal investigation</title>
+
+        <!-- CSS FILES -->        
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/templatemo-kind-heart-charity.css' %}" rel="stylesheet">
+<!--
+
+TemplateMo 581 Kind Heart Charity
+
+https://templatemo.com/tm-581-kind-heart-charity
+
+-->
+
+    </head>
+    
+    
+
+        <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="{% static 'images/B.jpg' %}" class="logo img-fluid" alt="Kind Heart Charity">
+                    <span>
+                        Criminal Investigation
+                        <small>tracker with suspect prediction</small>
+                    </span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+					
+					 {% if request.session.logint %}
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index">Home</a>
+                        </li>
+						
+						
+						  <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index">View Users</a>
+                        </li>
+						
+						
+						  <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index">View Departments</a>
+                        </li>
+						
+						
+						  <li class="nav-item">
+                            <a class="nav-link click-scroll" href="logout">Logout</a>
+                        </li>
+					{% elif request.session.uid %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="index">Home</a>
+                        </li>
+						
+						
+						 <li class="nav-item">
+                            <a class="nav-link" href="addcomplaint">Add Complaints</a>
+                        </li>
+						
+						
+						 <li class="nav-item">
+                            <a class="nav-link" href="viewcompts">View Complaint</a>
+                        </li>
+
+                   
+						 <li class="nav-item">
+                            <a class="nav-link" href="logout">Logout</a>
+                        </li>
+						
+						
+						
+						
+							{% elif request.session.sid %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="index">Home</a>
+                        </li>
+						
+						
+						
+						
+						 <li class="nav-item">
+                            <a class="nav-link" href="viewstudfir">View Case Details</a>
+                        </li>
+
+                   
+						 <li class="nav-item">
+                            <a class="nav-link" href="logout">Logout</a>
+                        </li>
+ {% else %}
+
+                     <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index">Home</a>
+                        </li>
+						  <li class="nav-item">
+                            <a class="nav-link" href="reg">User Register</a>
+                        </li>
+                     <li class="nav-item">
+                            <a class="nav-link" href="stud"> Student Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="login">Login</a>
+                        </li>
+						 {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+		{% endblock %}

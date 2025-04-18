@@ -1,0 +1,58 @@
+{% load static %}
+{% block static %}
+
+{% include 'admin/header.html' %}
+      <!-- partial -->
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Default form</h4>
+                  <p class="card-description">
+                    Basic form layout
+                  </p>
+                  <form class="forms-sample" method="POST" action="addpricipal" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">Name </th>
+                                    <th scope="col">Phone </th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Id Proof </th>
+                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in res %}
+                                <tr>
+                                    <td>{{i.id}}</td>
+                                    <td>{{i.name}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.phone}}</td>
+                                    <td><img src="media/{{i.id_proof}}" style="width:200px; height:auto;"></td>
+                                    
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    
+                   
+                  </form>
+                </div>
+              </div>
+            </div>
+           
+           
+    
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        {% include 'admin/footer.html' %}
+
+        {% endblock %}

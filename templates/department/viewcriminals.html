@@ -1,0 +1,69 @@
+{% load static %}
+{% block static %}
+
+{% include 'department/header.html' %}
+      <!-- partial -->
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">LIST OF CRIMINALS</h4>
+
+                  
+                  <form action="viewcrimfilter" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="name" placeholder="Enter Name">
+                    <input type="submit" name="submit">
+                  </form> 
+
+                  <form class="forms-sample" method="POST" action="addpricipal" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Name </th>
+
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Image</th>
+                                   
+								   
+                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in res %}
+                                <tr>
+                                    <td>{{i.id}}</td>
+                                    <td>{{i.name}}</td>
+                                    
+                                   
+								   
+									<td>{{i.description}}</td>
+									<td> <img src="media/{{i.image}} " style="width:50px; height:auto;"alt=""> </td>
+									
+                                  
+                                    
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    
+                   
+                  </form>
+                </div>
+              </div>
+            </div>
+           
+           
+    
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        
+
+        {% endblock %}

@@ -1,0 +1,48 @@
+{% load static %}
+{% block static %}
+
+{% include 'admin/header.html' %}
+      <!-- partial -->
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">DEPARTMENT REGISTRATION</h4>
+                  
+                  <form class="forms-sample" method="POST" action="adddept" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Department Name</label>
+                      <input type="text" class="form-control" id="exampleInputUsername1" name="department_name" placeholder="name">
+                    </div>
+
+                    
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" pattern="[a-z0-9._-]+@[a-z]+\.[a-z]{2,4}$" id="exampleInputEmail1"  name="email" placeholder="Email">
+                    </div>
+                
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                         name="password" placeholder="Password">
+                      </div>
+                    
+                    <center>
+                    <button type="submit" class="btn btn-primary mr-2" name="submit" value="submit">ADD</button>
+                </center>
+                  </form>
+                </div>
+              </div>
+            </div>
+           
+           
+    
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        
+
+        {% endblock %}
