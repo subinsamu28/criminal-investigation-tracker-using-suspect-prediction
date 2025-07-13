@@ -1,3 +1,15 @@
+🕵️‍♂️ Criminal Investigation Tracker Using Suspect Prediction is an AI-powered software system developed in collaboration with the 👮‍♂️ Nextgen innovation pro
+
+⚙️ It connects directly to police databases to:
+
+📁 Track and manage ongoing investigations
+
+🧠 Predict potential suspects based on crime data, location, and behavioral patterns
+
+📄 Auto-generate complete charge sheets in under 15 minutes
+
+🚀 Built for real-world deployment, the system reduces manual effort, enhances investigation accuracy, and accelerates case resolution in complex criminal scenarios.
+
 # 🕵️‍♂️ Criminal Investigation Tracker using Suspect Prediction
 
 > An intelligent case tracking and suspect prediction system developed for use by the Kerala Police.  
